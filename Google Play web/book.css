@@ -1,0 +1,100 @@
+/* General Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Creepster', cursive;
+  background: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Animated Background Layers */
+.bg-layer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.layer1 { background: url('image/horror-bg1.jpg') no-repeat center/cover; animation: float1 15s infinite alternate; }
+.layer2 { background: url('image/horror-bg2.jpg') no-repeat center/cover; animation: float2 20s infinite alternate; }
+.layer3 { background: url('image/horror-bg3.jpg') no-repeat center/cover; animation: float3 25s infinite alternate; }
+
+@keyframes float1 { 0% { transform: translateY(0); } 100% { transform: translateY(20px); } }
+@keyframes float2 { 0% { transform: translateY(0); } 100% { transform: translateY(-15px); } }
+@keyframes float3 { 0% { transform: translateY(0); } 100% { transform: translateY(25px); } }
+
+/* Wrong Icon */
+.wrong-icon {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: crimson;
+  cursor: pointer;
+  z-index: 100;
+  text-shadow: 0 0 8px black, 0 0 15px red;
+  transition: transform 0.2s;
+}
+.wrong-icon:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+/* Books Container */
+.books-container {
+  padding: 60px 20px 30px 20px;
+  text-align: center;
+}
+
+.books-container h1 {
+  font-size: 2.5rem;
+  color: crimson;
+  text-shadow: 0 0 10px black, 0 0 20px red;
+  margin-bottom: 50px;
+}
+
+/* Books Grid - row-wise */
+.books-grid {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  gap: 30px; /* space between rows */
+}
+
+/* Horror Book Cards */
+.book-card {
+  background: rgba(0,0,0,0.85);
+  border: 3px solid crimson;
+  border-radius: 15px;
+  width: 300px;
+  padding: 30px 20px;
+  box-shadow: 0 0 25px red, 0 0 40px black inset;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px crimson, 0 0 50px black inset;
+}
+
+.book-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 2px solid red;
+  box-shadow: 0 0 15px red;
+}
+
+.book-card p {
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
